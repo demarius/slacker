@@ -1,6 +1,7 @@
 # Slacker
 
 Slack bot to send a message every day.
+Currently sends reminders to strengthen your habits.
 
 ## Installation
 
