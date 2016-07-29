@@ -21,7 +21,7 @@ defmodule Slacker.Utils do
 
   def random_user(channel_id, slack) do
     {_channel_id, channel} = slack.channels
-      |> Enum.find(fn {c_id, channel} -> c_id == channel_id end)
+    |> Enum.find(fn {c_id, channel} -> c_id == channel_id end)
 
     if channel do
       channel.members
