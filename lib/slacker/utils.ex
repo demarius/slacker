@@ -2,8 +2,8 @@ defmodule Slacker.Utils do
   require IEx
 
   @timezone Application.get_env(:slacker, :default_timezone, "America/Detroit")
-  @office_start Application.get_env(:slacker, :office_start, 8)
-  @office_end Application.get_env(:slacker, :office_end, 5)
+  @day_start Application.get_env(:slacker, :day_start, 8)
+  @day_end Application.get_env(:slacker, :day_end, 5)
 
   def my_channels(slack) do
     slack.channels
@@ -40,13 +40,13 @@ defmodule Slacker.Utils do
   defp random([]), do: nil
   defp random(list), do: Enum.random(list)
 
-  def office_hours do
+  def hours do
     now = Timex.now(@timezone)
     midnight = Timex.beginning_of_day(now)
 
-    office_start = Timex.shift(midnight, hours: @office_start)
-    office_end = Timex.shift(midnight, hours: @office_end)
+    day_start = Timex.shift(midnight, hours: @day_start)
+    day_end = Timex.shift(midnight, hours: @day_end)
 
-    Timex.between?(now, office_start, office_end)
+    Timex.between?(now, day_start, day_end)
   end
 end
