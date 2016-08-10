@@ -16,7 +16,7 @@ defmodule Slacker.Mixfile do
   def application do
     [applications: [
       :logger, :slack
-    ], mod: {}]
+    ], mod: {Slacker, []}]
   end
 
   # Dependencies can be Hex packages:
