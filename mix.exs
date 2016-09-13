@@ -30,8 +30,7 @@ defmodule Slacker.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:slack, "~> 0.7.0"},
-      {:kvx, "~> 0.1.1"}
+      {:slack, "~> 0.7.0"}
     ]
   end
 end
